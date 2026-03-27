@@ -963,27 +963,36 @@
 
     // ── WHATSAPP SHARE ────────────────────────────────────
     function shareWhatsApp() {
-      if (!userPhotoData) { showToast('Upload photo first!', 'error'); return; }
-      renderToCanvas(() => {
-        document.getElementById('canvas').toBlob(blob => {
-          const file = new File([blob], "poster.png", { type: "image/png" });
-          if (navigator.share) {
-            navigator.share({
-              title: "Bhikshu Antrang 2026 🎶",
-              text: `🙏 Experience the divine vibes at Bhikshu Antrang 2026 🎶
+  if (!userPhotoData) { 
+    showToast('Upload photo first!', 'error'); 
+    return; 
+  }
 
-          जहाँ भजन, भक्ति और आत्मिक शांति का अद्भुत संगम ✨  
-          Join the most soulful bhajan jamming experience 💫
+  renderToCanvas(() => {
+    document.getElementById('canvas').toBlob(blob => {
+      const file = new File([blob], "poster.png", { type: "image/png" });
 
-          🎤 Feel it. Sing it. Live it.
+      const message = `
+🙏 Bhikshu Antrang 2026 🎶
 
-          👉 https://bhikshu-antarang-2026.netlify.app/`,
-              files: [file]
-            }).catch(() => fallbackWhatsApp());
-          } else { fallbackWhatsApp(); }
-        }, 'image/png');
-      });
-    }
+Bhajan • Vibes • Peace ✨  
+A soulful jamming experience you can't miss!
+
+👉 https://bhikshu-antarang-2026.netlify.app/
+`.trim();
+
+      if (navigator.share) {
+        navigator.share({
+          title: "Bhikshu Antrang 2026 🎶",
+          text: message,
+          files: [file]
+        }).catch(() => fallbackWhatsApp());
+      } else {
+        fallbackWhatsApp();
+      }
+    }, 'image/png');
+  });
+}
 
     function renderToCanvas(callback) {
       const canvas = document.getElementById('canvas');
