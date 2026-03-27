@@ -969,8 +969,15 @@
           const file = new File([blob], "poster.png", { type: "image/png" });
           if (navigator.share) {
             navigator.share({
-              title: "I'm Coming Poster",
-              text: "🙏 Join me for Bhikshu Antrang!\nhttps://stellar-speculoos-e60f6e.netlify.app/",
+              title: "Bhikshu Antrang 2026 🎶",
+              text: `🙏 Experience the divine vibes at Bhikshu Antrang 2026 🎶
+
+          जहाँ भजन, भक्ति और आत्मिक शांति का अद्भुत संगम ✨  
+          Join the most soulful bhajan jamming experience 💫
+
+          🎤 Feel it. Sing it. Live it.
+
+          👉 https://bhikshu-antarang-2026.netlify.app/`,
               files: [file]
             }).catch(() => fallbackWhatsApp());
           } else { fallbackWhatsApp(); }
