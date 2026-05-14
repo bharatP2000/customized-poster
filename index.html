@@ -469,15 +469,35 @@
     .avatar-ring.pulse { animation: pulse-purple 1.5s ease 2; }
 
     .footer-credit {
-      margin-top: 28px;
-      text-align: center;
-      font-size: 12px;
-      color: rgba(255,255,255,0.35);
-      line-height: 1.9;
-    }
-    .footer-credit strong { color: rgba(255,255,255,0.75); }
-    .footer-credit a { color: var(--purple-glow); text-decoration: none; }
-    .footer-credit a:hover { text-decoration: underline; }
+  margin-top: 28px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  line-height: 2;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  padding: 16px 20px;
+  }
+  .footer-credit strong { color: #ffffff; font-size: 14px; }
+  .footer-credit .dev-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+  }
+  .footer-credit .services {
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+  }
+  .footer-credit .contact {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .footer-credit a { color: #a259ff; text-decoration: none; font-weight: 600; }
+  .footer-credit a:hover { text-decoration: underline; color: #c084fc; }
+  .footer-credit .copyright { color: rgba(255,255,255,0.4); font-size: 11px; margin-top: 4px; }
   </style>
 </head>
 <body>
@@ -630,10 +650,13 @@
       </div>
 
       <div class="footer-credit">
-        <p>✨ Developed by <strong>Bharat Baid</strong></p>
-        <p>🚀 AI Consultation • Development • Integration</p>
-        <p>📞 +91 81000 81890 &nbsp;·&nbsp; <a href="mailto:growwbharat09@email.com">Let's build together</a></p>
-        <p style="margin-top:4px;font-size:10px;">© 2026 · All Rights Reserved</p>
+        <p>✨ Developed &amp; Maintained by</p>
+        <p class="dev-name">Bharat Baid</p>
+        <p class="services">🚀 AI Consultation • Development • Integration</p>
+        <p class="services">Building smart apps • Automation • Scalable systems</p>
+        <p class="contact">📞 +91 81000 81890</p>
+        <p>📩 <a href="mailto:growwbharat09@email.com">growwbharat09@email.com</a></p>
+        <p class="copyright">© 2026 · All Rights Reserved</p>
       </div>
 
       <div class="toast" id="toast"></div>
